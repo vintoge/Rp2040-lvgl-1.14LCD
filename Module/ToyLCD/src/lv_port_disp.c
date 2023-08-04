@@ -185,7 +185,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 
 
         /*
-            Benchmark 56fps
+            Benchmark 59fps at 250MHz
         */
         size_t size = (size_t)lv_area_get_width(area) * (size_t)lv_area_get_height(area) * 2;
         uint8_t buff[size];
@@ -204,8 +204,9 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 
 
         /*
-            Benchmark 66fps
+            Benchmark 69fps at 250MHz
         */
+        // (void) area;
         // st7789v_lcd_frame_refresh((void *)color_p);
     }
 
