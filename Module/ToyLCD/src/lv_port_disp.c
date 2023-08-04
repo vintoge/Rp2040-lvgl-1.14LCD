@@ -206,7 +206,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
         /*
             Benchmark 66fps
         */
-        // st7789v_lcd_frame_refresh((void *)color_p, 0);
+        // st7789v_lcd_frame_refresh((void *)color_p);
     }
 
     /*IMPORTANT!!!
