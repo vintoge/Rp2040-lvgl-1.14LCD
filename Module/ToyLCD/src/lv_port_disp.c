@@ -185,29 +185,29 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 
 
         /*
-            Benchmark 59fps at 250MHz
+            Benchmark 59fps at 250MHz no color swap
         */
-        size_t size = (size_t)lv_area_get_width(area) * (size_t)lv_area_get_height(area) * 2;
-        uint8_t buff[size];
-        for (size_t i = 0; i < sizeof(buff); i+=2) 
-        {
-            uint16_t color = color_p->full;
-            uint8_t hi = color >> 8;
-            uint8_t lo = color & 0xFF;
-            buff[i] = hi;
-            buff[i + 1] = lo;
+        // size_t size = (size_t)lv_area_get_width(area) * (size_t)lv_area_get_height(area) * 2;
+        // uint8_t buff[size];
+        // for (size_t i = 0; i < sizeof(buff); i+=2) 
+        // {
+        //     uint16_t color = color_p->full;
+        //     uint8_t hi = color >> 8;
+        //     uint8_t lo = color & 0xFF;
+        //     buff[i] = hi;
+        //     buff[i + 1] = lo;
 
-            // color_p->full = (color_p->full << 8) | (color_p->full >> 8); 
-            color_p++;
-        }
-        st7789v_lcd_frame_refresh(&buff[0]);
+        //     // color_p->full = (color_p->full << 8) | (color_p->full >> 8); 
+        //     color_p++;
+        // }
+        // st7789v_lcd_frame_refresh(&buff[0]);
 
 
         /*
-            Benchmark 69fps at 250MHz
+            Benchmark 69fps at 250MHz no color swap
         */
-        // (void) area;
-        // st7789v_lcd_frame_refresh((void *)color_p);
+        (void) area;
+        st7789v_lcd_frame_refresh((void *)color_p);
     }
 
     /*IMPORTANT!!!
