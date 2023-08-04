@@ -76,7 +76,7 @@ int main()
     while (true)
     {
         lv_timer_handler();
-        sleep_ms(5);
+        // sleep_ms(5);
     }
 
     return 0;
