@@ -36,7 +36,7 @@ bool repeating_timer_callback(struct repeating_timer *t)
 
     // gpio_xor_mask(1 << PICO_DEFAULT_LED_PIN);
     lv_tick_inc(5);
-    printf("Repeat at %lld\n", time_us_64());
+    // printf("Repeat at %lld\n", time_us_64());
     return true;
 }
 
